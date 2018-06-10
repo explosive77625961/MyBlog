@@ -1,0 +1,38 @@
+{{template "header"}}
+        <title>登录</title>
+</header>
+<body>
+    <div class="container">
+        <ol class="breadcrumb">
+            <li><a href="/other">其他</a></li>
+            <li class="active">登录</li>
+        </ol>
+    </div>
+    <div class="container">
+        <div class="page-header">
+            <h1>世界以痛吻我, <small> 要我报之以歌。</small></h1>
+        </div>
+    </div>
+
+    <div class="container">
+        <form method="post" action="/login">
+            <div class="form-group">
+                <label for="">用户名</label>
+                <input class="form-control"  placeholder="请输入用户名" name="uname">
+            </div>
+            <div class="form-group">
+                <label for="">密码</label>
+                <input type="password" class="form-control"  placeholder="请输入密码" name="pwd">
+            </div>
+
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" name="rember"> 记住登录
+                </label>
+            </div>
+            <button type="submit" class="btn btn-default">登录</button>
+        </form>
+    </div>
+
+</body>
+</html>

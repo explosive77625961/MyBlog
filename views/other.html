@@ -1,0 +1,26 @@
+{{template "header"}}
+    <title>其他</title>
+</head>
+    <body>
+        <div class="container">
+            {{template "nav" .}}
+        </div>
+
+        <div class="container">
+            <div class="page-header">
+                <h1>我们把世界看错，反说它欺骗了我们<small> 生如夏花之绚烂，死如秋叶之静美</small></h1>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="list-group">
+                {{if .IsLogin}}
+                    <a href="/login?exit=on" class="list-group-item">注销</a>
+                {{else}}
+                    <a href="/login" class="list-group-item">登录</a>
+                    <a href="/login?a=c" class="list-group-item">注册</a>
+                {{end}}
+            </div>
+        </div>
+    </body>
+</html>
