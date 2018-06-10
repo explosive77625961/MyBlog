@@ -11,11 +11,11 @@ type LoginController struct {
 
 
 func (this *LoginController) Get() {
-	maxAge := -1
-	this.Ctx.SetCookie("uname", "", maxAge, "/")
-	this.Ctx.SetCookie("pwd", "",maxAge, "/")
-
-	//this.Ctx.Redirect(301, "/other")
+	//maxAge := -1
+	//this.Ctx.SetCookie("uname", "", maxAge, "/")
+	//this.Ctx.SetCookie("pwd", "",maxAge, "/")
+	//
+	//this.Ctx.Redirect(301, "/")
 
 	//if this.Input().Get("a") == "on" {
 	//	maxAge := -1
