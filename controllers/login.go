@@ -11,20 +11,15 @@ type LoginController struct {
 
 
 func (this *LoginController) Get() {
-	//maxAge := -1
-	//this.Ctx.SetCookie("uname", "", maxAge, "/")
-	//this.Ctx.SetCookie("pwd", "",maxAge, "/")
-	//
-	//this.Ctx.Redirect(301, "/")
+	if this.Input().Get("exit") == "true" {
+		this.EnableRender = false
+		maxAge := -1
+		this.Ctx.SetCookie("uname", "", maxAge, "/")
+		this.Ctx.SetCookie("pwd", "",maxAge, "/")
 
-	//if this.Input().Get("a") == "on" {
-	//	maxAge := -1
-	//	this.Ctx.SetCookie("uname", "", maxAge, "/")
-	//	this.Ctx.SetCookie("pwd", "",maxAge, "/")
-	//
-	//	this.Ctx.Redirect(301, "/other")
-	//	return
-	//}
+		this.Ctx.Redirect(301, "/")
+		return
+	}
 
 	this.TplName = "sigin.html"
 }
@@ -42,10 +37,10 @@ func (this *LoginController) Post() {
 		}
 		this.Ctx.SetCookie("uname", uname, maxAge, "/")
 		this.Ctx.SetCookie("pwd", pwd, maxAge,"/")
-		//this.Ctx.Redirect(301, "/")
+		this.Ctx.Redirect(301, "/")
 		return
 	}
-	//this.Ctx.Redirect(301, "/login")
+	this.Ctx.Redirect(301, "/login")
 	return
 }
 
