@@ -9,8 +9,12 @@ type LoginController struct {
 	beego.Controller
 }
 
+func (this *LoginController) Prepare(){
+	this.Ctx.Output.Header("Cache-Control", "no-cache,no-store")
+}
 
 func (this *LoginController) Get() {
+<<<<<<< HEAD
 	if this.Input().Get("exit") == "true" {
 		this.EnableRender = false
 		maxAge := -1
@@ -20,7 +24,17 @@ func (this *LoginController) Get() {
 		this.Ctx.Redirect(301, "/")
 		return
 	}
+=======
 
+>>>>>>> 4c358306839b5e0b943ca9d17618fd030e98eda5
+
+	if this.Input().Get("exit") == "true" {
+		maxAge := -1
+		this.Ctx.SetCookie("uname", "", maxAge, "/")
+		this.Ctx.SetCookie("pwd", "",maxAge, "/")
+		this.Ctx.Redirect(301, "/")
+		return
+	}
 	this.TplName = "sigin.html"
 }
 
